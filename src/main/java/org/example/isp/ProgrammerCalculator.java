@@ -1,18 +1,13 @@
 package org.example.isp;
 
-public class ProgrammerCalculator implements CalculatorDisplay {
+public class ProgrammerCalculator implements BasicDisplay, ProgrammerDisplay {
     @Override
     public void basicView() {
-        System.out.printf("basicView");
+        System.out.printf("ProgrammerCalculator: basicView");
     }
 
     @Override
     public void programmerView() {
-        System.out.printf("programmerView");
-    }
-
-    @Override
-    public void scientificView() {
-        throw new RuntimeException("Not supported");
+        System.out.printf("ProgrammerCalculator: programmerView");
     }
 }

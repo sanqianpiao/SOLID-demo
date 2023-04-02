@@ -1,10 +1,5 @@
 package org.example.isp;
 
-public interface CalculatorDisplay {
+public interface CalculatorDisplay extends BasicDisplay, ProgrammerDisplay, ScientificDisplay {
 
-    void basicView();
-
-    void programmerView();
-
-    void scientificView();
 }
