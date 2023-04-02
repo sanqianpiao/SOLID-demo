@@ -1,12 +1,15 @@
 package org.example.liskov;
 
 
-class CreditCard extends PaymentInstrument {
+class CreditCard extends BaseBankCard {
+
+    public CreditCard(IPaymentInstrumentValidator basicValidator, IFraudChecker fraudChecker, IPaymentGatewayHandler gatewayHandler) {
+        super(basicValidator, fraudChecker, gatewayHandler);
+    }
 
     @Override
-    void validate() throws PaymentInstrumentInvalidException {
-        super.validate();
+    public void validate() throws PaymentInstrumentInvalidException {
+        basicValidator.validate();
         // additional validations for credit cards
     }
-    // other credit card-specific code
 }

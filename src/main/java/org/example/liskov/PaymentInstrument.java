@@ -2,14 +2,15 @@ package org.example.liskov;
 
 import java.util.Date;
 
-abstract class PaymentInstrument {
+abstract class PaymentInstrument implements IPaymentInstrument, IFraudChecker {
     String name;
     String cardNumber;
     String verificationCode;
     Date expiryDate;
     String fingerprint;
 
-    void validate() throws PaymentInstrumentInvalidException {
+    @Override
+    public void validate() throws PaymentInstrumentInvalidException {
         // basic validation on name, expiryDate etc.
         if (name == null || name.isEmpty()) {
             throw new PaymentInstrumentInvalidException("Name is invalid");
@@ -17,7 +18,8 @@ abstract class PaymentInstrument {
         // other validations
     }
 
-    void runFraudChecks() throws FraudDetectedException {
+    @Override
+    public void runFraudChecks() throws FraudDetectedException {
         // run checks against a third-party system
     }
 
