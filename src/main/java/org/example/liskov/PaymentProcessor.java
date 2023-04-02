@@ -21,5 +21,6 @@ class PaymentProcessor {
             PaymentInstrument paymentInstrument) {
         String fingerprint = paymentInstrument.getFingerprint();
         // save fingerprint and order details in DB
+        System.out.printf("save fingerprint and order details in DB");
     }
 }

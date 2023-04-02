@@ -27,6 +27,6 @@ abstract class PaymentInstrument {
     }
 
     public String getFingerprint() {
-        return null;
+        return this.fingerprint;
     }
 }
